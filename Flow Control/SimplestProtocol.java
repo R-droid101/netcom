@@ -1,3 +1,32 @@
+// Raggav Subramani - 20BCT0127
+
+/*
+Algorithm:
+Sender:
+while(true)  //Repeat Forever
+{
+   WaitForEvent();   //Sleep until there is occurrence of an event
+   if(Event(RequestToSend)) //means there is a packet to send
+   {
+     GetData();
+     MakeFrame();    
+     SendFrame();   //Send the frame 
+   }
+}
+
+Receiver:
+while(true)  //Repeat Forever
+{
+   WaitForEvent();   //Sleep until there is occurrence of an event
+   if(Event(ArrivalNotification)) //means there is a packet to send
+   {
+     ReceiveFrame();
+     ExtractData();    
+     DeliverData();   //Send the frame 
+   }
+}
+*/
+
 import java.util.*;
 
 class SimplestProtocol {

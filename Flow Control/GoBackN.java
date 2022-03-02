@@ -1,3 +1,77 @@
+// Raggav Subramani - 20BCT0127
+
+/*
+Algorithm:
+Sender:
+Sw = 2^m - 1;
+Sf = 0;
+Sn = 0;
+
+while(true)   // Repeat forever
+{
+    WaitForEvent();
+    if(Event(RequestToSend))   // A packet to send
+    {
+        if(Sn-Sf >= Sw)    // If window is full
+            sleep();
+        GetData();
+        MakeFrame(Sn);
+        StoreFrame(Sn);
+        SendFrame(Sn);
+        Sn = Sn + 1;
+        if(timer not running)
+            StartTimer();
+    }
+    if(Event(ArrivalNotification)) // ACK arrives
+    {
+        Receiver(ACK);
+        if(corrupted(ACK))
+            sleep();
+        if((ackNo>Sf) && (ackNo<=Sn))   // If a valid ACK
+        While(Sf <= ackNo)
+        {
+            PurgeFrame(Sf);
+            Sf = Sf + 1;
+        }
+        If(Sf == Sn) // the window is empty
+            StopTimer();
+        else
+            StartTimer();
+    }
+    if(Event(TimeOut))   // The timer expires
+    {
+        StartTimer();
+        Temp = Sf;
+        while(Temp < Sn)
+        {
+            ResendFrame(Temp);
+            Temp = Temp + 1;
+        }
+    }
+}
+
+Receiver:
+Rn = 0; 
+
+while(true)     // Repeat forever
+{
+    WaitForEvent();
+    if(Event(ArrivalNotification))   // A packet arrives
+    {
+        ReceiveFrame(Rn);
+        if(corrupted(frame))
+            sleep();
+        if(Rn == Sn)    // Valid data frame
+        {
+            DeliverData();    // Deliver data
+            Rn = Rn + 1;      // Slide Window
+            SendACK(Rn);
+        }
+    }
+}
+*/
+
+
 import java.util.*;
 
 public class GoBackN {

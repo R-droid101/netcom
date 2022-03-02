@@ -1,3 +1,42 @@
+// Raggav Subramani - 20BCT0127
+
+/* 
+Algorithm:
+Sender: 
+while(true)                //Repeat forever
+canSend=true                 //It will allow the first frame to go.
+{
+  WaitForEvent();                  //sleep until the occurrence of an event
+  if(Event(RequestToSend) AND canSend)
+   {
+      GetData();
+      MakeFrame();
+      SendFrame();   //Send the data frame
+      canSend=false;   //cannot send until the acknowledgement arrives.
+}
+
+WaitForEvent();   //sleep until the occurrence of an event
+if(Event(ArrivalNotification))  //indicates the arrival of the acknowledgement
+   {
+     ReceiveFrame();     //Means the ACK frame received
+     canSend=true;
+   }
+}
+
+Receiver:
+while(true)   //means Repeat forever
+{
+   WaitForEvent();  //sleep until the occurrence of an event
+   if(Event(ArrivalNotification)) //indicates arrival of the data frame
+   {
+      ReceiveFrame();
+      ExtractData();
+      Deliver(data); //delivers the data to the network layer.
+      SendFrame(); //Send the ACK frame
+   }
+}
+*/
+
 import java.util.*;
 public class StopAndWait {
     public static void sender(int frames, Scanner sc) {
