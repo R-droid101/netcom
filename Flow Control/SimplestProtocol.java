@@ -33,7 +33,7 @@ class SimplestProtocol {
     public static String sender(Scanner sc) {
         // Scanner sc = new Scanner(System.in);
         String frame = "";
-        System.out.println("Input data frames:");
+        System.out.println("Input data frame:");
         if (sc.hasNextLine())
             frame = sc.nextLine(); // get data from user and creating frame
         System.out.print("Sending Frame: " + frame);

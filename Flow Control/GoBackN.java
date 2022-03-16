@@ -71,7 +71,6 @@ while(true)     // Repeat forever
 }
 */
 
-
 import java.util.*;
 
 public class GoBackN {
