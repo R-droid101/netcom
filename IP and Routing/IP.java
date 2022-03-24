@@ -1,3 +1,17 @@
+// Raggav Subramani - 20BCT0127
+
+/* 
+Algorithm:
+1) Read the IP address, number of groups, number of customers per group and number of addresses required per customer from the user.
+2) Separate each octet of the IP address and store it in separate integer variables. Extract the mask value 'n' also from the IP address.
+3) Repeat
+4) Calculate the prefix length for the group requirements.
+5) Repeat
+6) If any of the octets go over 255, we increase the value of the next octet by one and resetting the current octet value.
+7) Print the details of the IP address the customer receieves after adding it to the last octet.
+8) Print the number of allocated resources, number of used resources and number of available resources.
+*/
+
 import java.util.*;
 
 public class IP {
