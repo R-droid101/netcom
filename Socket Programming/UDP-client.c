@@ -23,7 +23,7 @@ int main() {
 		perror("socket creation failed");
 		exit(EXIT_FAILURE);
 	}
-
+  
 	memset(&servaddr, 0, sizeof(servaddr));
 	
 	// Filling server information

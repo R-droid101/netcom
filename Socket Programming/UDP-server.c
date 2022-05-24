@@ -39,7 +39,7 @@ int main() {
 		perror("bind failed");
 		exit(EXIT_FAILURE);
 	}
-	
+	  
 	int len, n;
 
 	len = sizeof(cliaddr); //len is value/resuslt
